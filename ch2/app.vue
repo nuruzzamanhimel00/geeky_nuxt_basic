@@ -12,7 +12,7 @@
 <!-- <template>
   <div>
     <h1>THis is the Global page in - vuejs</h1>
-    <NuxtLayout name="custom">
+    <NuxtLayout name="customNuxtLayout">
       <NuxtPage />
     </NuxtLayout>
   </div>

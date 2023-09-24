@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Navbar />
     <h1>Contact pages</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
