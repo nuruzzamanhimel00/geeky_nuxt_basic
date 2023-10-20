@@ -1,0 +1,6 @@
+export default defineNuxtLink({
+  componentName: "MyNuxtLink",
+  activeClass: "my-new-active-link",
+  exactActiveClass: "my-new-exact-active-link",
+  /* see signature below for more */
+});
