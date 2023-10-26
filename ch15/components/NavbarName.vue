@@ -1,53 +1,3 @@
-<!-- without variable-->
-<!-- <template>
-  <div>
-    <ul class="nav">
-      <li class="nav-item">
-        <NuxtLink to="/" class="nav-link">Home</NuxtLink>
-      </li>
-      <li class="nav-item">
-        <NuxtLink
-          to="/blog"
-          class="nav-link"
-          exactActiveClass="himel-link-active"
-          >Blog</NuxtLink
-        >
-      </li>
-      <li class="nav-item">
-        <NuxtLink to="/about" class="nav-link">about</NuxtLink>
-      </li>
-
-      <li class="nav-item">
-        <NuxtLink to="http://10.253.253.244/" target="_blank" class="nav-link"
-          >Google</NuxtLink
-        >
-      </li>
-
-      <li class="nav-item">
-        <NuxtLink to="/himel" class="nav-link">User</NuxtLink>
-      </li>
-      <li class="nav-item">
-        <NuxtLink to="/post-1" class="nav-link">Post ID</NuxtLink>
-      </li>
-      <li class="nav-item">
-        <NuxtLink to="/blog" class="nav-link">Blog</NuxtLink>
-      </li>
-      <li class="nav-item">
-        <NuxtLink to="/blog/post-python" class="nav-link"
-          >Blog Post Category</NuxtLink
-        >
-      </li>
-      <li class="nav-item">
-        <NuxtLink to="/user-admin" class="nav-link">User Type</NuxtLink>
-      </li>
-      <li class="nav-item">
-        <NuxtLink to="/user-admin/10" class="nav-link">User Type ID</NuxtLink>
-      </li>
-    </ul>
-    <hr />
-  </div>
-</template> -->
-
 <!-- with variable -->
 <script setup>
 const months = ["January", "February", "March", "April", "May", "June", "July"];
@@ -73,18 +23,18 @@ const folderDynamic = ref("admin");
   <div>
     <ul class="nav">
       <li class="nav-item">
-        <NuxtLink to="/" class="nav-link">Home</NuxtLink>
+        <NuxtLink :to="{ name: 'index' }" class="nav-link">Home</NuxtLink>
       </li>
       <li class="nav-item">
         <NuxtLink
-          to="/blog"
+          :to="{ name: 'blog' }"
           class="nav-link"
           exactActiveClass="himel-link-active"
           >Blog</NuxtLink
         >
       </li>
       <li class="nav-item">
-        <NuxtLink to="/about" class="nav-link">about</NuxtLink>
+        <NuxtLink :to="{ name: 'about' }" class="nav-link">about</NuxtLink>
       </li>
 
       <li class="nav-item">
@@ -94,10 +44,18 @@ const folderDynamic = ref("admin");
       </li>
 
       <li class="nav-item">
-        <NuxtLink :to="`/${user}`" class="nav-link">User</NuxtLink>
+        <NuxtLink
+          :to="{ name: 'user', params: { user: user } }"
+          class="nav-link"
+          >User</NuxtLink
+        >
       </li>
       <li class="nav-item">
-        <NuxtLink :to="`/post-${postId}`" class="nav-link">Post ID</NuxtLink>
+        <NuxtLink
+          :to="{ name: 'post-id', params: { id: postId } }"
+          class="nav-link"
+          >Post ID</NuxtLink
+        >
       </li>
       <li class="nav-item">
         <NuxtLink to="/blog" class="nav-link">Blog</NuxtLink>
