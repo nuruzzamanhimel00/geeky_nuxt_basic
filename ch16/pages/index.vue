@@ -4,8 +4,9 @@
     <h1>Home page</h1>
   </div>
 </template>
-
+<!-- Anonymus Middlewate-->
 <script setup>
+//Anoniymus middleware
 definePageMeta({
   middleware: function (to, from) {
     console.log("Anoniymus middleware");
