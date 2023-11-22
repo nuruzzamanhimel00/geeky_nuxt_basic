@@ -1,0 +1,13 @@
+{tasks: [
+	{
+		id: 1,
+		title: 'Learn Vue 3',
+		isFav: true
+	},
+	{
+		id: 2,
+		title: 'Learn Vue 2',
+		isFav: false
+		}
+	]
+}
