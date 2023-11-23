@@ -12,6 +12,7 @@
       </div>
       <button class="btn btn-primary">Add</button>
     </form>
+    <a @click.prevent="taskStore.$reset" class="btn btn-primary">Reset</a>
   </div>
 </template>
 
@@ -38,6 +39,7 @@ export default {
     return {
       task_title,
       taskSubmit,
+      taskStore,
     };
   },
 };
