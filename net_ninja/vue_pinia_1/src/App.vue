@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useTaskStore } from "../store/TaskStore";
 import taskDetails from "./components/TaskDetails.vue";
 import AddTaskDetails from "./components/AddTaskDetails.vue";
@@ -76,6 +76,13 @@ export default {
   setup() {
     const taskStore = useTaskStore();
     const filter = ref("all");
+    onMounted(() => {
+      getAllTasks();
+    });
+
+    function getAllTasks() {
+      taskStore.get_all_tasks();
+    }
     return {
       taskStore,
       filter,

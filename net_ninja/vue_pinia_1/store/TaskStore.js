@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import axios from 'axios';
 
 export const useTaskStore = defineStore('taskStore', {
 	state: () => ({tasks: [{
@@ -29,6 +30,20 @@ export const useTaskStore = defineStore('taskStore', {
 		},
 		allCount() {return this.tasks.length}},
 	actions: {
+		async get_all_tasks() {
+			await axios.get('http://localhost:3000/tasks')
+			.then(function (response) {
+				// handle success
+				console.log(response);
+			})
+			.catch(function (error) {
+				// handle error
+				console.log(error);
+			})
+			.finally(function () {
+				// always executed
+			});
+		},
 		add_task(task) {
 			this.tasks.push(task);
 			// console.log(task)
